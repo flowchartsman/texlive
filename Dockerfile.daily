@@ -4,4 +4,5 @@ FROM $TLIVE_IMAGE
 WORKDIR /root
 
 RUN tlmgr update --self && \
-    tlmgr update --all
+    tlmgr update --all && \
+    rm -rf /usr/local/texlive/2022/tlpkg/backups
