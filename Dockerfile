@@ -2,7 +2,7 @@ FROM ubuntu:jammy
 
 WORKDIR /root
 
-ARG TEXLIVE_SCHEME
+ARG TLIVE_SCHEME
 RUN apt-get update && apt-get install -y \
     perl-modules-5.34 \
     python3-pygments \
@@ -17,7 +17,7 @@ RUN apt-get update && apt-get install -y \
     && mkdir texinstall \
     && wget -qO- https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xvz --strip-components=1 -C texinstall \
     && cd texinstall \
-    && ./install-tl --no-interaction --scheme=$TEXLIVE_SCHEME --no-doc-install --no-src-install \
+    && ./install-tl --no-interaction --scheme=$TLIVE_SCHEME --no-doc-install --no-src-install \
     && cd .. \
     && rm -rf texinstall
 # Installation is done to an arch-specific location, under ...2022/bin, so link to it wherever it is (will only be one dir, so glob okay)

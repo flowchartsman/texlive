@@ -34,7 +34,7 @@ jobs:
           context: .
           platforms: linux/amd64,linux/arm64
           build-args: |
-              TEXLIVE_SCHEME=${{ matrix.scheme }}
+              TLIVE_SCHEME=${{ matrix.scheme }}
           push: true
           tags: |
             flowchartsman/texlive-multiarch:${{ matrix.scheme }}-latest
