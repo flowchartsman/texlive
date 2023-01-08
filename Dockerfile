@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     fonts-inconsolata \
     fonts-ipaexfont-mincho \
     fonts-ipaexfont-gothic \
+    gpg \
     && rm -rf /var/lib/apt/lists/* \
     && mkdir texinstall \
     && wget -qO- https://mirror.ctan.org/systems/texlive/tlnet/install-tl-unx.tar.gz | tar xvz --strip-components=1 -C texinstall \
