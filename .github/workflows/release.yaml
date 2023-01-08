@@ -37,5 +37,6 @@ jobs:
               TEXLIVE_SCHEME=${{ matrix.scheme }}
           push: true
           tags: |
+${{ env.RELEASE_VERSION }}
             flowchartsman/texlive-multiarch:${{ matrix.scheme }}-latest
-            flowchartsman/texlive-multiarch:${{ matrix.schema }}-$GITHUB_REF_NAME
+            flowchartsman/texlive-multiarch:${{ matrix.schema }}-${{github.ref_name}}
