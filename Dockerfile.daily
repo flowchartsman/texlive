@@ -1,0 +1,7 @@
+ARG TLIVE_IMAGE
+FROM $TLIVE_IMAGE
+
+WORKDIR /root
+
+RUN tlmgr update --self && \
+    tlmgr update --all
