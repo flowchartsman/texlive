@@ -3,8 +3,8 @@ FROM ubuntu:jammy
 WORKDIR /root
 
 ARG TLIVE_SCHEME
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt update && apt install -y \
+ARG DEBIAN_FRONTEND=noninteractive
+RUN apt-get -qq update && apt-get install -qq -y --no-install-recommends \
     perl-modules-5.34 \
     python3-pygments \
     libyaml-tiny-perl \
