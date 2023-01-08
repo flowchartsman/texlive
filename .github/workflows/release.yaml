@@ -1,9 +1,9 @@
-name: ci
+name: push-on-tag
 
 on:
   push:
     tags:
-      -'[0-9]+.[0-9]+.[0-9]+'
+      - '[0-9]+.[0-9]+.[0-9]+'
 
 jobs:
   docker-build:
