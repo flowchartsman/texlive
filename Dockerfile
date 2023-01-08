@@ -23,7 +23,7 @@ RUN apt update && apt install -y \
     && cd .. \
     && rm -rf texinstall
 # Installation is done to an arch-specific location, under ...2022/bin, so link to it wherever it is (will only be one dir, so glob okay)
-RUN ln -s /usr/local/texlive/2022/bin/* /usr/local/texlive/docker
+RUN ln -s /usr/local/texlive/2022/bin/* /usr/local/texlive/2022/bin/docker
 ENV PATH "$PATH:/usr/local/texlive/docker"
 ENV MANPATH "$MANPATH:/usr/local/texlive/2022/texmf-dist/doc/man"
 ENV INFOPATH "$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
