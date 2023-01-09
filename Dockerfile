@@ -28,6 +28,6 @@ RUN ln -s /usr/local/texlive/2022/bin/* /usr/local/texlive/2022/bin/docker
 ENV LANG=C.UTF-8 \
     LC_ALL=C.UTF-8 \
     TERM=dumb \
-    PATH "$PATH:/usr/local/texlive/2022/bin/docker" \
-    MANPATH "$MANPATH:/usr/local/texlive/2022/texmf-dist/doc/man" \
-    INFOPATH "$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
+    PATH="$PATH:/usr/local/texlive/2022/bin/docker" \
+    MANPATH="$MANPATH:/usr/local/texlive/2022/texmf-dist/doc/man" \
+    INFOPATH="$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
