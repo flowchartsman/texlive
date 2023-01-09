@@ -2,7 +2,7 @@
 
 This repo defines a Docker image for using TeX Live 2022 to build documents on amd64 or arm64. It includes Pygments for using the `minted` package, and other tools as necessary. Please open an issue if something is missing.
 
-It provides images for the `full` `medium` `basic` nd `minimal` schemes using the following tags:
+It provides images for the `full` `medium` `basic` and `minimal` schemes using the following tags:
 
 * `flowchartsman/texlive-multiarch:full-latest`
 * `flowchartsman/texlive-multiarch:medium-latest`
