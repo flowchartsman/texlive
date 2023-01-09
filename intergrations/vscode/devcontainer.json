@@ -55,5 +55,9 @@
         // "latex-workshop.message.update.show": false,
         // "latex-workshop.synctex.afterBuild.enabled": true,
         "latex-workshop.view.pdf.viewer": "tab"
-    }
+    },
+    // uncomment to pull the newest version of the image automatically
+    // (you may be prompted to rebuild the devcontainer environment) when this
+    // happens.
+    //"initializeCommand": "docker pull flowchartsman/texlive-multiarch:full-daily"
 }
