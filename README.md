@@ -15,7 +15,7 @@ Additionally, daily builds are automated to update all packages in each schema i
 
 ## Integrations
 
-This image is designed to provide an easy way to build projects without installing TeX Live locally, and this can be especially useful in an IDE, like VS Code, using [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers)
+This image is designed to provide an easy way to build projects without installing TeX Live locally, and this can be especially useful in an IDE, like VS Code, using [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers). Instructions for doing this can be found in the `/integrations` directory.
 
 ## Notes
 
