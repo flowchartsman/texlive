@@ -25,6 +25,9 @@ RUN apt-get -qq update && apt-get install -qq -y --no-install-recommends \
     && rm -rf texinstall
 # Installation is done to an arch-specific location, under ...2022/bin, so link to it wherever it is (will only be one dir, so glob okay)
 RUN ln -s /usr/local/texlive/2022/bin/* /usr/local/texlive/2022/bin/docker
-ENV PATH "$PATH:/usr/local/texlive/docker"
-ENV MANPATH "$MANPATH:/usr/local/texlive/2022/texmf-dist/doc/man"
-ENV INFOPATH "$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
+ENV LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8 \
+    TERM=dumb \
+    PATH "$PATH:/usr/local/texlive/2022/bin/docker" \
+    MANPATH "$MANPATH:/usr/local/texlive/2022/texmf-dist/doc/man" \
+    INFOPATH "$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
