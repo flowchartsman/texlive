@@ -1,6 +1,6 @@
 # texlive-docker-multiarch
 
-This repo defines a Docker image for using TeX Live 2022 to build documents on amd64 or arm64. It includes Pygments for using the `minted` package, and other tools as necessary. Please open an issue if something is missing.
+This repo defines a Docker image for using TeX Live 2023 to build documents on amd64 or arm64. It includes Pygments for using the `minted` package, and other tools as necessary. Please open an issue if something is missing.
 
 It provides images for the `full` `medium` `basic` and `minimal` schemes using the following tags:
 
@@ -19,4 +19,4 @@ This image is designed to provide an easy way to build projects without installi
 
 ## Notes
 
-TeX Live is installed using the [instructions on tug.org](https://tug.org/texlive/doc/install-tl.html), which place binaries in an architecture-specific directory under `/usr/local/texlive/2022/bin/<architecture>`. To make this work smoothly across architectures, this is symlinked to `/usr/local/texlive/2022/bin/docker`
+TeX Live is installed using the [instructions on tug.org](https://tug.org/texlive/doc/install-tl.html), which place binaries in an architecture-specific directory under `/usr/local/texlive/2023/bin/<architecture>`. To make this work smoothly across architectures, this is symlinked to `/usr/local/texlive/2023/bin/docker`

@@ -24,8 +24,8 @@ RUN apt-get -qq update && apt-get install -qq -y --no-install-recommends \
     && ./install-tl --no-interaction --scheme=$TLIVE_SCHEME --no-doc-install --no-src-install \
     && cd .. \
     && rm -rf texinstall
-# Installation is done to an arch-specific location, under ...2022/bin, so link to it wherever it is (will only be one dir, so glob okay)
-RUN ln -s /usr/local/texlive/2022/bin/* /usr/local/texlive/2022/bin/docker
+# Installation is done to an arch-specific location, under ...2023/bin, so link to it wherever it is (will only be one dir, so glob okay)
+RUN ln -s /usr/local/texlive/2023/bin/* /usr/local/texlive/2023/bin/docker
 # Set locale
 RUN sed -i '/en_US.UTF-8/s/^# //g' /etc/locale.gen && \
     locale-gen
@@ -34,6 +34,6 @@ ENV LANG="en_US.UTF-8" \
     LC_ALL="en_US.UTF-8" \
     TERM=dumb
 # Inclue texlive paths
-ENV PATH="$PATH:/usr/local/texlive/2022/bin/docker" \
-    MANPATH="$MANPATH:/usr/local/texlive/2022/texmf-dist/doc/man" \
-    INFOPATH="$INFOPATH:/usr/local/texlive/2022/texmf-dist/doc/info"
+ENV PATH="$PATH:/usr/local/texlive/2023/bin/docker" \
+    MANPATH="$MANPATH:/usr/local/texlive/2023/texmf-dist/doc/man" \
+    INFOPATH="$INFOPATH:/usr/local/texlive/2023/texmf-dist/doc/info"

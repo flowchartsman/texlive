@@ -1,63 +1,63 @@
 {
-    "name": "TeX Live",
-    "image": "flowchartsman/texlive-multiarch:full-daily",
-    "extensions": [
-        "James-Yu.latex-workshop"
+  "name": "TeX Live",
+  "image": "flowchartsman/texlive-multiarch:full-daily",
+  "extensions": [
+    "James-Yu.latex-workshop"
+  ],
+  "settings": {
+    "terminal.integrated.shell": "/bin/bash",
+    "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
+    "latex-workshop.latex.autoBuild.interval": 0,
+    "latex-workshop.latex.autoBuild.run": "onFileChange",
+    "latex-workshop.latex.autoClean.run": "onBuilt",
+    "latex-workshop.latex.recipes": [
+      {
+        "name": "latexmk",
+        "tools": [
+          "latexmk"
+        ]
+      }
     ],
-    "settings": {
-        "terminal.integrated.shell": "/bin/bash",
-        "latex-workshop.latex.autoBuild.cleanAndRetry.enabled": false,
-        "latex-workshop.latex.autoBuild.interval": 0,
-        "latex-workshop.latex.autoBuild.run": "onFileChange",
-        "latex-workshop.latex.autoClean.run": "onBuilt",
-        "latex-workshop.latex.recipes": [
-            {
-                "name": "latexmk",
-                "tools": [
-                    "latexmk"
-                ]
-            }
+    // Change below if you want another engine
+    // NOTE: to change the output directory, both the option to latexmk as
+    // well as the "outDir" option to the extension below must be set,
+    // otherwise preview won't know where to find your file.
+    "latex-workshop.latex.tools": [
+      {
+        "name": "latexmk",
+        "command": "latexmk",
+        "args": [
+          //"-output-directory=_out",
+          "-lualatex",
+          "-shell-escape",
+          "-silent",
+          "%DOC%"
         ],
-        // Change below if you want another engine
-        // NOTE: to change the output directory, both the option to latexmk as
-        // well as the "outDir" option to the extension below must be set,
-        // otherwise preview won't know where to find your file.
-        "latex-workshop.latex.tools": [
-            {
-                "name": "latexmk",
-                "command": "latexmk",
-                "args": [
-                    //"-output-directory=_out",
-                    "-lualatex",
-                    "-shell-escape",
-                    "-silent",
-                    "%DOC%"
-                ],
-                "env": {}
-            }
-        ],
-        //"latex-workshop.latex.outDir": "%DIR%/_out",
-        // formatting for latex files
-        "[latex]": {
-            "editor.formatOnSave": true,
-            "editor.formatOnPaste": true,
-            "editor.defaultFormatter": "James-Yu.latex-workshop"
-        },
-        "latex-workshop.latexindent.path": "/usr/local/texlive/2022/bin/docker/latexindent",
-        "latex-workshop.latexindent.args": [
-            "%TMPFILE%",
-            "-c=%DIR%/",
-            "-y=defaultIndent: '%INDENT%'"
-        ],
-        "latex-workshop.bibtex-format.sort.enabled": true,
-        "latex-workshop.bibtex-fields.sort.enabled": true,
-        // other useful settings
-        // "latex-workshop.message.update.show": false,
-        // "latex-workshop.synctex.afterBuild.enabled": true,
-        "latex-workshop.view.pdf.viewer": "tab"
+        "env": {}
+      }
+    ],
+    //"latex-workshop.latex.outDir": "%DIR%/_out",
+    // formatting for latex files
+    "[latex]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true,
+      "editor.defaultFormatter": "James-Yu.latex-workshop"
     },
-    // uncomment to pull the newest version of the image automatically
-    // (you may be prompted to rebuild the devcontainer environment) when this
-    // happens.
-    //"initializeCommand": "docker pull flowchartsman/texlive-multiarch:full-daily"
+    "latex-workshop.latexindent.path": "/usr/local/texlive/2023/bin/docker/latexindent",
+    "latex-workshop.latexindent.args": [
+      "%TMPFILE%",
+      "-c=%DIR%/",
+      "-y=defaultIndent: '%INDENT%'"
+    ],
+    "latex-workshop.bibtex-format.sort.enabled": true,
+    "latex-workshop.bibtex-fields.sort.enabled": true,
+    // other useful settings
+    // "latex-workshop.message.update.show": false,
+    // "latex-workshop.synctex.afterBuild.enabled": true,
+    "latex-workshop.view.pdf.viewer": "tab"
+  },
+  // uncomment to pull the newest version of the image automatically
+  // (you may be prompted to rebuild the devcontainer environment) when this
+  // happens.
+  //"initializeCommand": "docker pull flowchartsman/texlive-multiarch:full-daily"
 }
